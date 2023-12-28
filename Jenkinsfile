@@ -37,11 +37,11 @@ pipeline {
         sh "docker run -d --name node-app -p 3000:8080 dwip23/jenkins-node-aap:$BUILD_NUMBER"
       }
     }
-    // stage('Remove Unused docker image') {
-    //   steps{
-    //     sh "docker rmi -f $imagename:$BUILD_NUMBER"
-    //     sh "docker rmi -f $imagename:latest"
-    //   }
-    // }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi -f $imagename:$BUILD_NUMBER"
+        // sh "docker rmi -f $imagename:latest"
+      }
+    }
   }
 }
