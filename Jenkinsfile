@@ -33,7 +33,7 @@ pipeline {
       steps{
         sh "docker stop node-app"
         sh "docker rm node-app"
-        sh "docker pull dwip23/jenkins-node-aap:$BUILD_NUMBER
+        sh "docker pull dwip23/jenkins-node-aap:$BUILD_NUMBER"
         sh "docker run -d --name node-app -p 3000:8080 dwip23/jenkins-node-aap:$BUILD_NUMBER"
       }
     }
