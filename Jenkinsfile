@@ -12,6 +12,12 @@ pipeline {
  
       }
     }
+    stage('Install Docker') {
+      steps{
+        sh "sudo apt-get update"
+        sh "sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin"
+ 
+    }
     stage('Building image') {
       steps{
         script {
